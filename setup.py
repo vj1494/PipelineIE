@@ -4,7 +4,7 @@ with open("README.md", "r") as frm:
     long_description = frm.read()
 
 setup(
-    name="pipeline_ie-ie",
+    name="pipeline_ie",
     version="0.1.0",
     author="Vinit Jain",
     author_email="vj1494@gmail.com",
