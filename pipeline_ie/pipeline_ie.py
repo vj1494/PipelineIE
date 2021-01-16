@@ -8,7 +8,7 @@ import spacy
 class PipelineIE:
 
     def __init__(self, input_text, file_name="NA", folder_dir="NA", col_name="NA", spacy_model=None, pipeline="default", coref_output=False,
-                 config_file=True, corenlp_home="NA", properties={'coref': 'neuralcoref', 'entity_link': 'spacy', 'ie': 'triplet'}):
+                 config_file=False, corenlp_home="NA", properties={'coref': 'neuralcoref', 'entity_link': 'spacy', 'ie': 'triplet'}):
         """
         :param input_text: str
             Pass a string for raw text.
