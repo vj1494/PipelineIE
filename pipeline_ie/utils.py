@@ -1,4 +1,5 @@
 import configparser
+import os
 
 def write_config_file(corenlp_home, folder_dir, file_name, col_name):
     config = configparser.ConfigParser()
@@ -11,7 +12,7 @@ def write_config_file(corenlp_home, folder_dir, file_name, col_name):
                                      'algorithm': 'neural'}
     config['corenlp_params'] = {'timeout': '60000',
                                 'memory': '4G'}
-    with open('config.ini', 'w') as configfile:
+    with open((os.path.join(os.path.dirname(__file__), 'config.ini')), 'w') as configfile:
         config.write(configfile)
 
 
