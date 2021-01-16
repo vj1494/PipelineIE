@@ -29,8 +29,8 @@ Install PipelineIE
 ```bash
 git clone https://github.com/vj1494/PipelineIE.git
 cd PipelineIE
-python setup.py build
-python setup.py install
+pip install -r requirements.txt
+pip install -e .
 ```
 
 ## Usage
