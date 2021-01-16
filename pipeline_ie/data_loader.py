@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from pipeline_ie.config import Config
+from pathlib import Path
 
 
 class DataLoader:
@@ -35,9 +36,10 @@ class DataLoader:
             df_text = pd.DataFrame(input_text)
         elif self.config.get('file_directory', 'input_file') != 'NA':
             input_file = self.config.get('file_directory', 'input_file')
-            if flag == "csv":
+            flag = Path(input_file).suffix
+            if flag == ".csv":
                 df_text = pd.read_csv(input_file)
-            if flag == "xlsx":
+            if flag == ".xlsx":
                 df_text = pd.read_excel(input_file)
         else:
             dir_name = self.config.get('file_directory', 'input_file_dir')
