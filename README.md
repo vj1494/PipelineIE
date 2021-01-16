@@ -27,8 +27,8 @@ Download and unzip [CoreNLP 4.2.0](http://nlp.stanford.edu/software/stanford-cor
 
 Install PipelineIE
 ```bash
-git clone 
-cd 
+git clone https://github.com/vj1494/PipelineIE.git
+cd pipeline_ie
 python setup.py build
 python setup.py install
 ```
