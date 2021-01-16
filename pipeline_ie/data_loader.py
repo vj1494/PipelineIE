@@ -16,8 +16,10 @@ class DataLoader:
                 return "csv"
             elif self.input == "xlsx":
                 return "xlsx"
-            else:
+            elif self.input!="NA":
                 return "text"
+            else:
+                return "file"
         except Exception as e:
             print("Error {}").format(e)
 
