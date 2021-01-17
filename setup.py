@@ -19,8 +19,6 @@ setup(
                       'openpyxl==3.0.5',
                       'pandas',
                       'scispacy==0.3.0'
-                      #'en-core-sci-lg @ https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.3.0/en_core_sci_lg-0.3.0.tar.gz',
-                      #'en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz'
                      ],
     classifiers=[
         "Programming Language :: Python :: 3.7",
