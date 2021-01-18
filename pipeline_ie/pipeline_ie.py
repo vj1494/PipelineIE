@@ -50,7 +50,7 @@ class PipelineIE:
     def load_spacy_model(self):
         """
         Load spaCy model.
-        If pipeline_ie is default, then select spaCy's 'en' model.
+        If pipeline_ie is default, then select spaCy's 'en_core_web_sm' model.
         If pipeline_ie is biomedical, then select scispaCy's 'en_core_sci_lg' model.
         A user can pass their custom spaCy model.
         :return: nlp object
@@ -59,7 +59,7 @@ class PipelineIE:
         if self.spacy_model is not None:
             nlp = spacy.load(self.spacy_model)
         elif self.pipeline == "default":
-            nlp = spacy.load('en')
+            nlp = spacy.load('en_core_web_sm')
         elif self.pipeline == "biomedical":
             nlp = spacy.load('en_core_sci_lg')
         return nlp
