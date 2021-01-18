@@ -53,7 +53,7 @@ df = pie.pipeline_triplet()
 ```
 
 ## Additional Usage and Example
-Please refer to the [example](https://www.kaggle.com/vj1494/pipelineie) for Additional Usage.
+Please refer to the [example](https://github.com/vj1494/PipelineIE/blob/master/PipelineIE.ipynb) for Additional Usage.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
