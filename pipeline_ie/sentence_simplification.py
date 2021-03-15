@@ -104,7 +104,11 @@ class SentenceSimplify:
             for sentence in self.sentences:
                 sentence = re.sub(r"(\.|,|\?|\(|\)|\[|\])", " ", sentence)
                 ann = client.annotate(sentence)
-                decomposed_sent.extend(self.get_clause_list(ann))
+                clause_list = self.get_clause_list(ann)
+                if not clause_list:
+                    decomposed_sent.append(sentence)
+                else:
+                    decomposed_sent.extend(clause_list)
         return decomposed_sent
 
 
