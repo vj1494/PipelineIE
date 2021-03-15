@@ -9,6 +9,8 @@ How does it help? / What problem does it solve?
 2. Usually, the subject and object does not represent the complete entity (which can be a sequence of many words) and might only represent a substring of the original entity. The Entity Linker in the pipeline helps to solve this problem while extracting triplets.
 3. Finally, in a few lines, anyone can extract triplets from text using the default pipeline or the biomedical pipeline, taking care of the above 2 problems, and use their custom pipeline making it easy to try different options on the input data.
 
+# Update
+PipelineIE now supports sentence simplification. It has been adopted from (https://github.com/freyamehta99/Sentence-Simplification) 
 
 ## Installation
 
@@ -45,6 +47,7 @@ text = "Co-culture of NK cells with transfected EC enhanced E-selectin, IL-8, an
 #Default Biomedical Pipeline uses ScispaCy en_core_sci_lg model
 #Same model is used for neuralcoref, entity linkage and triple extraction 
 #pipeline_ie="default" uses spacy en model
+#Sentence Simplification is set as True by default. In order to disable it pass sentence_simplify=False
 pie = PipelineIE(text, pipeline="biomedical")
 
 #Returns a dataframe
