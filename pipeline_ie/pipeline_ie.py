@@ -1,5 +1,6 @@
 from pipeline_ie.data_loader import DataLoader
 from pipeline_ie.coref import Coref
+from pipeline_ie.sentence_simplification import SentenceSimplify
 from pipeline_ie.entity_link import EntityLink
 from pipeline_ie.information_extraction import InformationExtraction
 from pipeline_ie.utils import sent_segmentation, write_config_file
@@ -90,6 +91,8 @@ class PipelineIE:
             params = coref.configuration.corenlp_params()
             memory, timeout = params[0], params[1]
             annotation = 'parse'
+            sentence_simp = SentenceSimplify(sentences,annotation,memory,timeout)
+            sentences = sentence_simp.sentence_simplify()
 
         #Entity Linking
         entity_link = EntityLink(nlp, self.properties['entity_link'], sentences)
