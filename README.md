@@ -7,7 +7,8 @@ Currently the pipeline extracts information in the form of triplets and consists
 How does it help? / What problem does it solve?
 1. It is important to resolve coreferences in the text before entities and triplets can be extracted so that they contain the original entities rather than pronouns.
 2. Usually, the subject and object does not represent the complete entity (which can be a sequence of many words) and might only represent a substring of the original entity. The Entity Linker in the pipeline helps to solve this problem while extracting triplets.
-3. Finally, in a few lines, anyone can extract triplets from text using the default pipeline or the biomedical pipeline, taking care of the above 2 problems, and use their custom pipeline making it easy to try different options on the input data.
+3. Complex sentences makes it difficult to extract information from text. This pipeline solves this problem by decomposing complex sentence into simple sentences.
+4. Finally, in a few lines, anyone can extract triplets from text using the default pipeline or the biomedical pipeline, taking care of the above 2 problems, and use their custom pipeline making it easy to try different options on the input data.
 
 
 ## Installation
@@ -58,3 +59,6 @@ Please refer to the [example](https://github.com/vj1494/PipelineIE/blob/master/P
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+# Credits
+Sentence Simplification - (https://github.com/freyamehta99/Sentence-Simplification)
