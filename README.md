@@ -1,7 +1,7 @@
 # PipelineIE
 PipelineIE is an Information Extraction Pipeline primarily based on spaCy that lets you extract information from free text and provides the flexibility to run general to domain specific pipeline like the biomedical domain for information extraction.
 
-Currently the pipeline extracts information in the form of triplets and consists of Coreference Resolution ([Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) / [neuralcoref](https://github.com/huggingface/neuralcoref)) >> Entity Linking ([spaCy](https://spacy.io/) / [ScispaCy](https://github.com/allenai/scispacy) / custom spaCy model) >> Triplet  Extraction (Currently Subject - Verb - Object Rule using [textaCy](https://github.com/chartbeat-labs/textacy)).
+Currently the pipeline extracts information in the form of triplets and consists of Coreference Resolution ([Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) / [neuralcoref](https://github.com/huggingface/neuralcoref)) >> Sentence Simplification that decomposes complex sentences to simple sentences >> Entity Linking ([spaCy](https://spacy.io/) / [ScispaCy](https://github.com/allenai/scispacy) / custom spaCy model) >> Triplet  Extraction (Currently Subject - Verb - Object Rule using [textaCy](https://github.com/chartbeat-labs/textacy)).
 
 
 How does it help? / What problem does it solve?
