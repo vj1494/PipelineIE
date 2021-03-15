@@ -8,7 +8,7 @@ import spacy
 class PipelineIE:
 
     def __init__(self, input_text="NA", file_name="NA", folder_dir="NA", col_name="NA", spacy_model=None, pipeline="default", coref_output=False,
-                 config_file=False, corenlp_home="NA", properties={'coref': 'neuralcoref', 'entity_link': 'spacy', 'ie': 'triplet'}):
+                 config_file=False, corenlp_home="NA",sentence_simplify=True, properties={'coref': 'neuralcoref', 'entity_link': 'spacy', 'ie': 'triplet'}):
         """
         :param input_text: str
             Pass a string for raw text.
@@ -31,6 +31,8 @@ class PipelineIE:
             Outputs a file of text after coreference operation if True.
         :param corenlp_home: str
             CORENLP_HOME dir location to be passed if not mentioned in config.ini and config_file=False
+        :param sentence_simplify: bool
+            Flag to enable or disable sentence simplification after coreference resolution
         :param properties: dict
             Consists of default pipeline_ie {'coref': 'neuralcoref', 'entity_link': 'spacy', 'ie': 'triplet'}
             In order to use corenlp's coreference resolution, use value 'corenlp' for key 'coref'
@@ -45,6 +47,7 @@ class PipelineIE:
         self.coref_output = coref_output
         self.config_file = config_file
         self.corenlp_home = corenlp_home
+        self.sentence_simply = sentence_simplify
         self.properties = properties
 
     def load_spacy_model(self):
@@ -81,6 +84,12 @@ class PipelineIE:
         coref = Coref(nlp, self.properties['coref'], data, self.coref_output)
         texts = coref.coref_resolution()
         sentences = sent_segmentation(texts, nlp)
+
+        #Syntactic Sentence Simplification
+        if self.sentence_simply:
+            params = coref.configuration.corenlp_params()
+            memory, timeout = params[0], params[1]
+            annotation = 'parse'
 
         #Entity Linking
         entity_link = EntityLink(nlp, self.properties['entity_link'], sentences)
